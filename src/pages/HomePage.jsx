@@ -29,6 +29,9 @@ export const HomePage = ({ countries, setCountries }) => {
             axios.get(ALL_COUNTRIES).then(({data}) => setCountries(data))
     },[])
 
+    useEffect(() => {
+        handleSearch()
+    },[countries])
     return (
         <>
             <Controlls onSearch={ handleSearch }/>
